@@ -1,0 +1,19 @@
+{
+  "name": "linkedin-messaging-bot",
+  "description": "linkedin-messaging-bot/\r ├── src/\r │   ├── auth.js             // Módulo de autenticación en LinkedIn\r │   ├── searchContacts.js   // Módulo de búsqueda de reclutadores\r │   ├── messageSender.js    // Módulo para enviar mensajes y registrar actividad\r │   ├── db.js               // Módulo de conexión a la base de datos MySQL\r │   └── config.js           // Configuración de credenciales y otros parámetros\r ├── index.js                // Archivo principal para ejecutar el flujo completo\r ├── package.json            // Dependencias y scripts\r └── README.md               // Documentación del proyecto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.11.3",
+    "puppeteer": "^23.6.1"
+  }
+}

@@ -1,0 +1,30 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled output
+dist/
+build/
+
+# Environment variables
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Misc
+*.tgz
