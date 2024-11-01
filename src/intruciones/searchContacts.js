@@ -1,4 +1,4 @@
-import { searchQuery } from './config.js';
+import { searchQuery } from '../config.js';
 
 export async function searchContacts(page) {
     await page.goto(`https://www.linkedin.com/search/results/people/?keywords=${searchQuery}`);

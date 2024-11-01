@@ -1,15 +1,15 @@
-import { logActivity } from './db.js';
-import { messageText } from './config.js';
+import { logActivity } from '../db.js';
+import { messageText } from '../config.js';
 
 export async function sendMessage(page, contact) {
     try {
         // Abrir el perfil del contacto y esperar que esté listo
         await contact.click();
-        await page.waitForSelector('button[aria-label="Mensaje"]');
+        await page.waitForSelector('button[aria-label^="Enviar mensaje"]');
 
         // Hacer clic en el botón de "Mensaje"
-        const messageButton = await page.$('button[aria-label="Mensaje"]');
-        await messageButton.click();
+        const messageButton = await page.$('button[aria-label^="Enviar mensaje"]');
+        await messageButton.click(), { timeout: 60000 };
         await page.waitForSelector('div[role="textbox"]');
 
         // Preparar el mensaje personalizado

@@ -14,3 +14,24 @@ export function logActivity(contactName, contactProfileLink, messageText, status
         if (err) console.error("Error al registrar actividad:", err);
     });
 }
+
+export async function saveRecruiterNames(recruiters) {
+    const connection = await mysql.createConnection(dbConfig);
+    try {
+        await connection.connect();
+
+        // Insertar cada reclutador en la tabla
+        for (const recruiter of recruiters) {
+            const [name, linkedin] = recruiter.split(' - ');
+
+            const query = 'INSERT INTO reclutadores (nombre, linkedin) VALUES (?, ?)';
+            await connection.execute(query, [name, linkedin]);
+        }
+
+        console.log('Reclutadores guardados en la base de datos.');
+    } catch (error) {
+        console.error('Error al guardar reclutadores:', error.message);
+    } finally {
+        await connection.end();
+    }
+}
